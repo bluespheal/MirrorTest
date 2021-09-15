@@ -20,6 +20,12 @@ public class player : NetworkBehaviour
     {
         GetComponent<MeshRenderer>().material.color = myColor;
         listOfInts.Callback += ListChanged;
+
+        if (base.isLocalPlayer)
+            instance = this;
+
+        Camera.main.GetComponent<CameraFollow>().InnitFollow();
+        
     }
 
     private void OnDestroy()
@@ -109,6 +115,16 @@ public class player : NetworkBehaviour
                 break;
             case SyncList<int>.Operation.OP_SET:
                 break;
+        }
+    }
+
+    static player instance = null;
+
+    public static player Instance
+    {
+        get
+        {
+            return instance;
         }
     }
 

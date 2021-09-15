@@ -58,6 +58,9 @@
   <ItemGroup>
     <Compile Include="Assets\player.cs" />
     <Compile Include="Assets\bullet.cs" />
+    <Compile Include="Assets\Messages.cs" />
+    <Compile Include="Assets\CameraFollow.cs" />
+    <Compile Include="Assets\MirrorTransform.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
